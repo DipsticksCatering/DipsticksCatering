@@ -1,0 +1,162 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dipsticks | Wedding & Event Catering</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      Dipsticks
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
+    <div class="drizzle-banner">
+        <img src="images/drizzle.png" alt="Chocolate drizzle border">
+        <img src="images/drizzle3.png" alt="Chocolate drizzle border">
+    </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>Dipsticks</h1>
+      <p>wedding & event catering</p>
+    </div>
+
+    <div class="hero-image">
+      <!-- REPLACE WITH YOUR PNG -->
+      <img src="images/bananas.png" alt="Chocolate covered banana illustration">
+      <br>
+      <a href="book.html" class="hero-button">
+        book a sweet treat now
+        </a>
+
+  
+    </div>
+
+  </section>
+  <br>
+  <br>
+
+  <!-- GALLERY SECTION -->
+  <section class="gallery-section" id="gallery">
+
+    <h2>Gallery</h2>
+
+    <div class="slider-container">
+
+        <button class="slide-btn prev">&#10094;</button>
+
+        <div class="slider">
+
+            <div class="slide active">
+              <div class="blur-bg" 
+              style="background-image: url('images/standoutsideumbrella.png');">
+              </div>
+              <img src="images/standoutsideumbrella.png">
+            </div>
+            <div class="slide active">
+              <div class="blur-bg" 
+              style="background-image: url('images/KLOutside3.jpg');">
+              </div>
+              <img src="images/KLOutside3.jpg">
+            </div>
+            <div class="slide active">
+              <div class="blur-bg" 
+              style="background-image: url('images/AIbananas.png');">
+              </div>
+              <img src="images/AIbananas.png">
+            </div>
+            <div class="slide active">
+              <div class="blur-bg" 
+              style="background-image: url('images/AiStandwedding.png');">
+              </div>
+              <img src="images/AiStandwedding.png">
+            </div>
+            <div class="slide active">
+              <div class="blur-bg" 
+              style="background-image: url('images/squeezebottle.jpeg');">
+              </div>
+              <img src="images/squeezebottle.jpeg">
+            </div>
+            <div class="slide active">
+              <div class="blur-bg" 
+              style="background-image: url('images/funstand.jpeg');">
+              </div>
+              <img src="images/funstand.jpeg">
+            </div>
+            <div class="slide active">
+              <div class="blur-bg" 
+              style="background-image: url('images/KLinsidestand.jpeg');">
+              </div>
+              <img src="images/KLinsidestand.jpeg">
+            </div>
+
+        </div>
+
+        <button class="slide-btn next">&#10095;</button>
+
+    </div>
+
+</section>
+<script>
+
+const slides = document.querySelectorAll(".slide");
+
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let current = 0;
+
+/* NEXT */
+
+nextBtn.addEventListener("click", () => {
+
+    slides[current].classList.remove("active");
+
+    current++;
+
+    if(current >= slides.length){
+        current = 0;
+    }
+
+    slides[current].classList.add("active");
+});
+
+/* PREVIOUS */
+
+prevBtn.addEventListener("click", () => {
+
+    slides[current].classList.remove("active");
+
+    current--;
+
+    if(current < 0){
+        current = slides.length - 1;
+    }
+
+    slides[current].classList.add("active");
+});
+
+</script>
+</body>
+</html>
